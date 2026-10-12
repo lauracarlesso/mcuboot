@@ -33,6 +33,7 @@
 
 #include "xip_enc.h"
 
+#include "bootutil/enc_key_public.h"
 #include "bootutil/sign_key.h"
 #include "bootutil/crypto/ecdh_p256.h"
 #include "bootutil/crypto/hmac_sha256.h"

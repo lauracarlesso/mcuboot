@@ -161,6 +161,13 @@ fih_ret boot_image_check_hook(struct boot_loader_state *state,
  * @param rsp the boot response struct to populate
  */
 void boot_xip_populate_rsp(int img_index, struct boot_rsp *rsp);
+
+/** Wipe the library-internal XIP encryption keys.
+ *
+ * Called once the jump hook has programmed the hardware crypto regions from
+ * every image's key, so the keys live until their last consumer has run.
+ */
+void xip_enc_clear_keys(void);
 #endif
 
 /** Hook for implement image update

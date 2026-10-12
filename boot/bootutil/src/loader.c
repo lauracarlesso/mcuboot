@@ -1945,7 +1945,7 @@ context_boot_go(struct boot_loader_state *state, struct boot_rsp *rsp)
 
 #if defined(MCUBOOT_ENC_IMAGES_XIP)
     boot_xip_populate_rsp(BOOT_CURR_IMG(state), rsp);
-    xip_enc_clear_keys();
+    /* Keys are wiped after the jump hook consumes every image's key. */
 #endif
 
     fih_rc = FIH_SUCCESS;
@@ -2436,7 +2436,7 @@ context_boot_go(struct boot_loader_state *state, struct boot_rsp *rsp)
 
 #if defined(MCUBOOT_ENC_IMAGES_XIP)
     boot_xip_populate_rsp(BOOT_CURR_IMG(state), rsp);
-    xip_enc_clear_keys();
+    /* Keys are wiped after the jump hook consumes every image's key. */
 #endif
 
 close:
